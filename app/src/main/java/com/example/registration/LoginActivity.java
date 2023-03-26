@@ -11,19 +11,20 @@ import android.widget.Toast;
 
 public class LoginActivity extends AppCompatActivity {
 
-    EditText email;
-    EditText password;
+    EditText email, password;
+    TextView btn;
     Button btnLogin;
+    DBHelper DB;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        TextView btn=findViewById(R.id.textViewSignUp);
-        btnLogin = findViewById(R.id.btnLogin);
 
-        email = findViewById(R.id.email);
-        password = findViewById(R.id.password);
+        email = (EditText) findViewById(R.id.email);
+        password = (EditText)  findViewById(R.id.password);
+        btnLogin = (Button) findViewById(R.id.btnLogin);
+        DB = new DBHelper(this);
 
         btn.setOnClickListener(new View.OnClickListener() {
 
@@ -35,11 +36,21 @@ public class LoginActivity extends AppCompatActivity {
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                if (email.getText().toString().equals("user@gmail.com") && password.getText().toString().equals("1234")) {
-                    Toast.makeText(LoginActivity.this, "Login Successful!", Toast.LENGTH_SHORT).show();
-                } else {
-                    Toast.makeText(LoginActivity.this, "Login Failed!", Toast.LENGTH_SHORT).show();
+            public void onClick(View view) {
+                String user = email.getText().toString();
+                String pass = password.getText().toString();
+
+                if(user.equals("")||pass.equals(""))
+                    Toast.makeText(LoginActivity.this, "Please enter all the fields", Toast.LENGTH_SHORT).show();
+                else{
+                    Boolean checkuserpass = DB.checkusernamepassword(user, pass);
+                    if(checkuserpass == true){
+                        Toast.makeText(LoginActivity.this, "Sign in successful!", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                        startActivity(intent);
+                    }else{
+                        Toast.makeText(LoginActivity.this, "Invalid Credentials", Toast.LENGTH_SHORT).show();
+                    }
                 }
             }
         });
