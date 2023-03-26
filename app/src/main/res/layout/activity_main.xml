@@ -1,97 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:id="@+id/root_view"
-    android:background="@drawable/wallpaper"
-    android:padding="18dp"
     tools:context=".MainActivity">
 
-
-        <TextView
-            android:id="@+id/date"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_margin="10dp"
-            android:background="@drawable/round"
-            android:padding="8dp"
-            android:text="March 30"
-            android:textAlignment="center"
-            android:textColor="@color/black"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/txtExPost"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/gossip_clr"
-            android:padding="8dp"
-            android:text="#11220 Rumor has it that the reason why Professor Johnson suddenly retired is because of an affair with one of his students, and now the university is trying to cover it up to avoid any scandal, but the students are already talking about it all over social media."
-            android:textAlignment="viewStart"
-            android:textColor="@color/black"
-            android:textSize="17sp" />
-
     <TextView
-            android:id="@+id/comment"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_margin="8dp"
-            android:background="@drawable/round"
-            android:gravity="center"
-            android:padding="8dp"
-            android:text="Comments"
-            android:textAlignment="center"
-            android:textColor="@color/black"
-            android:textStyle="bold" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Home"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <LinearLayout
-        android:id="@+id/cmtSection"
-        android:layout_width="377dp"
-        android:layout_height="250dp"
-        android:background="@drawable/round"
-        android:orientation="vertical">
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/commentGroup"
-        android:layout_width="match_parent"
-        android:layout_height="66dp"
-        android:gravity="center"
-        android:orientation="horizontal"
-        android:padding="8dp">
-
-        <ImageView
-            android:id="@+id/em1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/gossip_clr"
-            android:padding="8dp"
-            android:src="@drawable/baseline_emoji_emotions_24" />
-
-        <EditText
-            android:id="@+id/leavecomment"
-            android:layout_width="280dp"
-            android:layout_height="48dp"
-            android:background="@drawable/gossip_clr"
-            android:drawablePadding="8dp"
-            android:hint="Leave a comment"
-            android:padding="8dp"
-            android:textSize="14sp" />
-
-        <ImageView
-            android:id="@+id/send"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/gossip_clr"
-            android:drawablePadding="8dp"
-            android:padding="8dp"
-            android:src="@drawable/baseline_send_24" />
-    </LinearLayout>
-
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
