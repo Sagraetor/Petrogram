@@ -24,7 +24,7 @@
         app:layout_constraintVertical_bias="0.133" />
 
     <EditText
-        android:id="@+id/password"
+        android:id="@+id/lPassword"
         android:layout_width="0dp"
         android:layout_height="48dp"
         android:layout_marginTop="10dp"
@@ -40,13 +40,13 @@
         android:paddingBottom="10dp"
         android:textColor="@color/colorBlack"
         android:textColorHint="@color/grey"
-        app:layout_constraintEnd_toEndOf="@+id/email"
+        app:layout_constraintEnd_toEndOf="@+id/lEmail"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/email"
-        app:layout_constraintTop_toBottomOf="@+id/email" />
+        app:layout_constraintStart_toStartOf="@+id/lEmail"
+        app:layout_constraintTop_toBottomOf="@+id/lEmail" />
 
     <EditText
-        android:id="@+id/email"
+        android:id="@+id/lEmail"
         android:layout_width="0dp"
         android:layout_height="48dp"
         android:layout_marginStart="32dp"
@@ -78,31 +78,31 @@
         android:textColor="@color/colorPrimaryDark"
         android:textSize="13sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/password"
-        app:layout_constraintTop_toBottomOf="@+id/password" />
+        app:layout_constraintEnd_toEndOf="@+id/lPassword"
+        app:layout_constraintTop_toBottomOf="@+id/lPassword" />
 
     <Button
         android:id="@+id/btnLogin"
         android:layout_width="345dp"
         android:layout_height="43dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="44dp"
         android:background="@drawable/btn_bg"
         android:text="Login"
-        app:layout_constraintEnd_toEndOf="@+id/password"
+        app:layout_constraintEnd_toEndOf="@+id/lPassword"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/password"
+        app:layout_constraintStart_toStartOf="@+id/lPassword"
         app:layout_constraintTop_toBottomOf="@+id/forgotPassword" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="24dp"
         android:gravity="center"
         android:orientation="horizontal"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="@+id/btnLogin"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/btnLogin"
         app:layout_constraintTop_toBottomOf="@+id/btnLogin">
 
@@ -120,46 +120,6 @@
             android:textColor="@color/colorRed" />
 
     </LinearLayout>
-
-    <Button
-        android:id="@+id/btnGoogle"
-        android:layout_width="140dp"
-        android:layout_height="43dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="8dp"
-        android:background="@drawable/btn_bg"
-        android:drawableLeft="@drawable/ic_google"
-        android:drawablePadding="10dp"
-        android:paddingLeft="20dp"
-        android:text="Google"
-        android:textAlignment="textStart"
-        android:textAllCaps="false"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/btnFacebook"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        app:layout_constraintVertical_bias="0.261" />
-
-    <Button
-        android:id="@+id/btnFacebook"
-        android:layout_width="140dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="32dp"
-        android:background="@drawable/btn_bg"
-        android:drawableStart="@drawable/ic_facebook"
-        android:drawablePadding="10dp"
-        android:paddingLeft="20dp"
-        android:text="Facebook"
-        android:textAlignment="textStart"
-        android:textAllCaps="false"
-        app:layout_constraintBottom_toBottomOf="@+id/btnGoogle"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/btnGoogle"
-        app:layout_constraintTop_toTopOf="@+id/btnGoogle"
-        app:layout_constraintVertical_bias="0.0" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
