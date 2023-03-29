@@ -1,4 +1,4 @@
-package com.example.registration;
+package com.example.comments;
 
 public class Comment {
     public String content;
