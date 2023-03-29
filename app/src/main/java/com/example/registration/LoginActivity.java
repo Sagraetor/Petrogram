@@ -11,7 +11,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class LoginActivity extends Activity {
+public class LoginActivity extends AppCompatActivity {
 
     EditText email, password;
     TextView signup;
@@ -49,7 +49,7 @@ public class LoginActivity extends Activity {
                     Boolean checkuserpass = DB.checkusernamepassword(user, pass);
                     if(checkuserpass == true){
                         Toast.makeText(LoginActivity.this, "Login successful!", Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                        Intent intent = new Intent(getApplicationContext(), HomepageActivity.class);
                         startActivity(intent);
                     }else{
                         Toast.makeText(LoginActivity.this, "Incorrect email or password!", Toast.LENGTH_SHORT).show();

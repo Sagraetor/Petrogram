@@ -11,7 +11,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class RegisterActivity extends Activity {
+public class RegisterActivity extends AppCompatActivity {
 
     Button btnRegister;
     EditText email, password, repassword;
@@ -61,7 +61,7 @@ public class RegisterActivity extends Activity {
                             Boolean insert = DB.insertData(user, pass);
                             if(insert == true){
                                 Toast.makeText(RegisterActivity.this, "Registration successful!", Toast.LENGTH_SHORT).show();
-                                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                                Intent intent = new Intent(getApplicationContext(), HomepageActivity.class);
                                 startActivity(intent);
                             }else{
                                 Toast.makeText(RegisterActivity.this, "Registration failed!", Toast.LENGTH_SHORT).show();
