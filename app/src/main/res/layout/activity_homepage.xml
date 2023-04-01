@@ -14,12 +14,33 @@
         android:id="@+id/constraintLayout"
         android:layout_marginTop="20dp">
 
+        <Button
+            android:id="@id/addTopic"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="8dp"
+            android:text="+"
+            android:textSize="23sp"
+            app:layout_constraintStart_toStartOf="@+id/PetroGramDesc"
+            app:layout_constraintTop_toBottomOf="@+id/PetroGramDesc" />
+
+        <Button
+            android:id="@+id/minusTopic"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="-"
+            android:textSize="23sp"
+            app:layout_constraintStart_toEndOf="@+id/addTopic"
+            app:layout_constraintTop_toBottomOf="@+id/PetroGramDesc" />
+
         <TextView
             android:id="@+id/PetroGramName"
             android:layout_width="200dp"
             android:layout_height="42dp"
             android:layout_marginStart="18dp"
-            android:layout_marginTop="44dp"
+            android:layout_marginTop="16dp"
             android:text="PetroGram"
             android:textColor="@color/lavender"
             android:textSize="40sp"
@@ -47,7 +68,7 @@
             android:id="@+id/PetroGramImage"
             android:layout_width="133dp"
             android:layout_height="123dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="4dp"
             android:layout_marginEnd="16dp"
             android:src="@drawable/pglogo"
             app:layout_constraintEnd_toEndOf="parent"
