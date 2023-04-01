@@ -14,21 +14,24 @@ public class DeleteProfile {
     }
 
     protected void showConfirmationDialog(){
+        //display confirmation dialog
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
         builder.setTitle("Delete Profile");
         builder.setMessage("Are you sure you want to delete your profile?");
         builder.setPositiveButton("Yes",new DialogInterface.OnClickListener() {
             @Override
+            //if user choose yes, go to delete profile function
             public void onClick(DialogInterface dialogInterface, int i) {
                 deleteProfile();
             }
         });
+        //if user choose no, close confirmation dialog
         builder.setNegativeButton("No", null);
         builder.show();
     }
 
     private void deleteProfile() {
-        // remove the user's profile information from wherever it is stored
+        // remove the user's profile information from the database
         // navigate back to the previous activity (login page)
         ((Activity)context).onBackPressed();
     }
