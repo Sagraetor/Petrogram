@@ -26,12 +26,14 @@ public class EditProfile extends AppCompatActivity {
         textPassword2 = findViewById(R.id.textPassword2);
 
         btnSave.setOnClickListener(v -> {
+            //save value of edit text into text value for profile page
             String username = textUsername1.getText().toString();
             String email = textEmail1.getText().toString();
             String password = textPassword1.getText().toString();
             String confirmpassword = textPassword2.getText().toString();
 
-            if(confirmpassword == password){
+            if(confirmpassword.equals(password)){
+                //display new info at profile page
                 Intent intent = new Intent();
                 intent.putExtra("USERNAME", username);
                 intent.putExtra("EMAIL", email);
