@@ -1,9 +1,10 @@
 package com.example.TopicHandler;
 
+import java.util.ArrayList;
 import java.sql.*;
 
 public class TopicHandler {
-    public static void save(String Post){
+    public static void SavePost(String Post,String TopicID){
 
         String driver = "com.mysql.cj.jdbc.Driver";
         String url = "jdbc:mysql://localhost:3306/petrogram";
@@ -11,8 +12,6 @@ public class TopicHandler {
         String password = "";
 
 
-        String TopicID = "1";
-        String PostID = "1";
 
         try {
 
@@ -21,28 +20,28 @@ public class TopicHandler {
             Connection con = DriverManager.getConnection(url,user,password);
 
 
-            String query = "INSERT INTO `topichandler`(`TopicID`, `PostID`, `Post`) VALUES (?, ?, ?)";
+            String query = "INSERT INTO `topichandler`(`TopicID`,`Post`) VALUES (?, ?)";
             PreparedStatement stmt = con.prepareStatement(query);
             stmt.setString(1, TopicID);
-            stmt.setString(2, PostID);
-            stmt.setString(3, Post);
+            stmt.setString(2, Post);
 
             // Execute the prepared statement to insert the data
             stmt.executeUpdate();
 
             con.close();
         } catch (Exception e) {
-           System.out.println(e);
+           System.out.println("Error Error. Please try again");
         }
     }
 
-    public static void GetPost(int ID){
+    public static ArrayList<String> GetPost(int ID){
+
         String driver = "com.mysql.cj.jdbc.Driver";
         String url = "jdbc:mysql://localhost:3306/petrogram";
         String user = "root";
         String password = "";
 
-
+        ArrayList<String> Post = new ArrayList<>();
 
         try {
 
@@ -56,19 +55,18 @@ public class TopicHandler {
             ResultSet rs=stmt.executeQuery( String.format("SELECT * FROM `topichandler` WHERE TopicID = %d", ID));
 
 
-
-
-            // Execute the prepared statement to insert the data
+            // Execute the prepared statement to get the data
             while(rs.next()) {
-                System.out.println(rs.getString("Post") + "\n");
-
+                Post.add(rs.getString("Post"));
             }
+
+
 
             con.close();
         } catch (Exception e) {
-            System.out.println(e);
-        }
+            System.out.println("Error Error. Please try again");}
 
+        return Post;
 
 
     }
