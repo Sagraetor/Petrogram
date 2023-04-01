@@ -10,7 +10,8 @@ import androidx.appcompat.app.AppCompatActivity;
 public class MainActivity extends AppCompatActivity {
 
     private static final int EDIT_PROFILE_REQUEST_CODE = 1;
-
+    
+    //declare variables to be used
     private TextView textUsername, textEmail, textPassword;
     private DeleteProfile deleteProfile;
 
@@ -28,11 +29,13 @@ public class MainActivity extends AppCompatActivity {
         deleteProfile = new DeleteProfile(this);
 
         btnEdit.setOnClickListener(v -> {
+            //go to edit page when button edit is clicked
             Intent intent = new Intent(MainActivity.this, EditProfile.class);
             startActivityForResult(intent, EDIT_PROFILE_REQUEST_CODE);
         });
 
         btnDel.setOnClickListener(v -> {
+            //show confirmation dialog when delete button is clicked
             deleteProfile.showConfirmationDialog();
         });
     }
@@ -41,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == EDIT_PROFILE_REQUEST_CODE && resultCode == RESULT_OK) {
+            //display new info edited to profile page
             String username = data.getStringExtra("USERNAME");
             textUsername.setText(username);
 
