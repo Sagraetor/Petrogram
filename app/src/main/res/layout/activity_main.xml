@@ -1,19 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/root_view"
     android:background="@drawable/wallpaper"
+    android:padding="18dp"
     tools:context=".MainActivity">
 
-    <LinearLayout
-        android:layout_width="410dp"
-        android:layout_height="369dp"
-        android:orientation="vertical"
-        android:padding="20dp"
-        tools:layout_editor_absoluteX="-2dp"
-        tools:layout_editor_absoluteY="234dp">
 
         <TextView
             android:id="@+id/date"
@@ -30,33 +26,72 @@
 
         <TextView
             android:id="@+id/txtExPost"
-            android:layout_width="370dp"
-            android:layout_height="183dp"
-            android:background="@drawable/custom_edittext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/gossip_clr"
             android:padding="8dp"
-            android:text="TextView" />
+            android:text="#11220 Rumor has it that the reason why Professor Johnson suddenly retired is because of an affair with one of his students, and now the university is trying to cover it up to avoid any scandal, but the students are already talking about it all over social media."
+            android:textAlignment="viewStart"
+            android:textColor="@color/black"
+            android:textSize="17sp" />
+
+    <TextView
+            android:id="@+id/comment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="8dp"
+            android:background="@drawable/round"
+            android:gravity="center"
+            android:padding="8dp"
+            android:text="Comments"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
+
+    <LinearLayout
+        android:id="@+id/cmtSection"
+        android:layout_width="377dp"
+        android:layout_height="250dp"
+        android:background="@drawable/round"
+        android:orientation="vertical">
+
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="410dp"
-        android:layout_height="56dp"
+        android:id="@+id/commentGroup"
+        android:layout_width="match_parent"
+        android:layout_height="66dp"
+        android:gravity="center"
         android:orientation="horizontal"
-        tools:layout_editor_absoluteX="-2dp"
-        tools:layout_editor_absoluteY="31dp">
+        android:padding="8dp">
 
-        <Button
-            android:id="@+id/btnGossip"
+        <ImageView
+            android:id="@+id/em1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Button" />
+            android:background="@drawable/gossip_clr"
+            android:padding="8dp"
+            android:src="@drawable/baseline_emoji_emotions_24" />
 
-        <Button
-            android:id="@+id/button2"
-            android:layout_width="wrap_content"
+        <EditText
+            android:id="@+id/leavecomment"
+            android:layout_width="280dp"
+            android:layout_height="48dp"
+            android:background="@drawable/gossip_clr"
+            android:drawablePadding="8dp"
+            android:hint="Leave a comment"
+            android:padding="8dp"
+            android:textSize="14sp" />
+
+        <ImageView
+            android:id="@+id/send"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Button" />
+            android:background="@drawable/gossip_clr"
+            android:drawablePadding="8dp"
+            android:padding="8dp"
+            android:src="@drawable/baseline_send_24" />
     </LinearLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
