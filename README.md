@@ -25,3 +25,5 @@ SOFEA DAYANA ROSLI 21001320
 # Description
 A communications app similar to telegram with different sections, comments and reactions. The user would be able to login
 or sign up and all posts are anonymous. The users can also communicate through reaction button if they don't feel like commenting on their interested posts. The posts and comments data are stored on the cloud. 
+
+UML![Main](https://user-images.githubusercontent.com/126660372/229363969-a213ee23-d0b1-43f9-b99c-57df7094fe08.jpg)
