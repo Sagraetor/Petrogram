@@ -1,6 +1,7 @@
 package com.example.registration;
 
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -11,21 +12,23 @@ import android.widget.Toast;
 
 public class LoginActivity extends AppCompatActivity {
 
-    EditText email;
-    EditText password;
+    EditText email, password;
+    TextView signup;
     Button btnLogin;
+    DBHelper DB;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        TextView btn=findViewById(R.id.textViewSignUp);
-        btnLogin = findViewById(R.id.btnLogin);
 
-        email = findViewById(R.id.email);
-        password = findViewById(R.id.password);
+        signup = (TextView) findViewById(R.id.textViewSignUp);
+        email = (EditText) findViewById(R.id.lEmail);
+        password = (EditText)  findViewById(R.id.lPassword);
+        btnLogin = (Button) findViewById(R.id.btnLogin);
+        DB = new DBHelper(this);
 
-        btn.setOnClickListener(new View.OnClickListener() {
+        signup.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View view) {
@@ -35,11 +38,21 @@ public class LoginActivity extends AppCompatActivity {
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                if (email.getText().toString().equals("user@gmail.com") && password.getText().toString().equals("1234")) {
-                    Toast.makeText(LoginActivity.this, "Login Successful!", Toast.LENGTH_SHORT).show();
-                } else {
-                    Toast.makeText(LoginActivity.this, "Login Failed!", Toast.LENGTH_SHORT).show();
+            public void onClick(View view) {
+                String user = email.getText().toString();
+                String pass = password.getText().toString();
+
+                if(user.equals("")||pass.equals(""))
+                    Toast.makeText(LoginActivity.this, "Please enter all the fields!", Toast.LENGTH_SHORT).show();
+                else{
+                    Boolean validate = DB.checkusernamepassword(user, pass);
+                    if(validate == true){
+                        Toast.makeText(LoginActivity.this, "Login successful!", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(getApplicationContext(), HomepageActivity.class);
+                        startActivity(intent);
+                    }else{
+                        Toast.makeText(LoginActivity.this, "Incorrect email or password!", Toast.LENGTH_SHORT).show();
+                    }
                 }
             }
         });
